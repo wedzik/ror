@@ -5,8 +5,8 @@ class Task1
   end
 
   def mPrint(x)
-    print ' ' if(x >= 0)
     print ' ' if(x.abs < 10)
+    print ' ' if(x >= 0)
     print ' '+x.to_s
   end
 end
