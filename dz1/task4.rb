@@ -10,13 +10,13 @@ class Task4
     key = key.to_s if (key.is_a? Symbol)
     if ( key =~ /\Ayes(.*?)/ )
       @findCount += 1
-      puts @findCount.to_s+'. '+key.to_s
+      puts "#@findCount. #{key}"
     end
   end
 
   def run
     @h.each_key{|key| parseKey(key)}
-    puts "Found %d matches " % @findCount
+    puts "Found #@findCount matches"
   end
 end
 

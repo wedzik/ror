@@ -22,7 +22,7 @@ class Task2
     puts
     @m.each{ |m| m.each{ |x| self.testNegative(x) } }
     puts
-    puts 'Negative sum= '+@negativeSum.to_s;
+    puts "Negative sum= #@negativeSum";
   end
 end
 
