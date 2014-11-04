@@ -19,8 +19,7 @@ class Task5
     if (val.is_a? Hash)
       val.values.each{ |v| parseValue(v) }
       val.keys.each{ |key| parseKey(val, key) }
-    end
-    if (val.is_a? Array)
+    elsif (val.is_a? Array)
       val.each{ |v| parseValue(v) }
     end
   end
