@@ -1,6 +1,5 @@
 require 'test/unit'
-require 'test/unit/ui/console/testrunner'
-require 'dictionary_search'
+require_relative 'dictionary_search'
 
 class DictionarySearchTest < Test::Unit::TestCase
   def setup
@@ -14,5 +13,3 @@ class DictionarySearchTest < Test::Unit::TestCase
     assert(matches.sort == pairs.flatten.sort) # word pairs can be in any order (doesn't have to be same as above)
   end
 end
- 
-Test::Unit::UI::Console::TestRunner.run(DictionarySearchTest)

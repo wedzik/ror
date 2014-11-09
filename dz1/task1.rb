@@ -1,8 +1,8 @@
 class Task1
   def initialize
-    @m= Array.new(4){ Array.new(4) { Random.rand(-10..10) } }
+    @avTempHash= Array.new(4){ Array.new(4) { Random.rand(-10..10) } }
     @negativeSum = 0;
-    @m.each{ |m| m.each{ |x| self.mPrint(x) }; puts }
+    @avTempHash.each{ |m| m.each{ |x| self.mPrint(x) }; puts }
   end
 
   def mPrint(x)
@@ -19,7 +19,7 @@ class Task1
   end
 
   def getNegativeSum
-    @m.each{ |m| m.each{ |x| self.testNegative(x) } }
+    @avTempHash.each{ |m| m.each{ |x| self.testNegative(x) } }
     puts
     @negativeSum
   end
