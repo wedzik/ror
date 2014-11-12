@@ -2,9 +2,11 @@ class DictionarySearch
   def initialize(file_path)
     @data = Hash.new
     @word_pairs = Array.new()
-    File.open(file_path, 'r').each_line do |line|
+
+    lines = File.readlines(file_path)
+    lines.each do |line|
       line.strip!
-      if line.size > 2
+      if line.size > 2 && line[-1] != line[-2]
         key = line.chop.chop!
         if @data.has_key?(key)
           @data[key].push(line)
@@ -20,8 +22,8 @@ class DictionarySearch
     t = w2[-2]
     w2[-2] = w2[-1]
     w2[-1] = t
-    if w != w2 && arr.include?(w2)
-      @word_pairs << [w,w2] if !@word_pairs.include?([w,w2])
+    if arr.include?(w2)
+      @word_pairs << [w,w2] #if !@word_pairs.include?([w,w2])
       arr.delete(w2)
     end
   end
